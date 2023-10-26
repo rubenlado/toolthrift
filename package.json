@@ -1,0 +1,30 @@
+{
+  "name": "toolthrift",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "express": "^4.18.2",
+    "global": "^4.4.0",
+    "puppeteer": "^21.3.6",
+    "vinted-api": "^2.9.1",
+    "vinted-moniteur": "^1.0.6",
+    "window": "^4.2.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "standard": "^17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}
