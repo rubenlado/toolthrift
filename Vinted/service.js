@@ -1,7 +1,7 @@
 import VintedMoniteur from 'vinted-moniteur'
 import { brandMapper } from './utils.js'
 class VintedService {
-  async getProducts ({ brand, searchText }) {
+  getProducts ({ brand, searchText, io }) {
     const brandId = brandMapper[brand]
     let url = `https://www.vinted.fr/catalog?brand_id[]=${brandId}&order=newest_first`
 
@@ -20,7 +20,8 @@ class VintedService {
 
     moniteur.on('error', (err) => console.log(err))
     moniteur.on('item', (data) => {
-      console.log(data)
+      io.emit('product', data)
+      console.log('emit data', data.id)
       // -> OBJECT
       // {
       //     id: 2838672149,

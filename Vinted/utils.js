@@ -25,5 +25,6 @@ export const brandMapper = {
   nike: 53,
   astore: 301298,
   dior: 11645735556,
-  diesel: 161
+  diesel: 161,
+  kikokostadinov: 5821136
 }

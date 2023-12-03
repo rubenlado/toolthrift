@@ -16,12 +16,14 @@
     "express": "^4.18.2",
     "global": "^4.4.0",
     "puppeteer": "^21.3.6",
+    "socket.io": "^4.7.2",
     "vinted-api": "^2.9.1",
     "vinted-moniteur": "^1.0.6",
     "window": "^4.2.7"
   },
   "devDependencies": {
     "nodemon": "^3.0.1",
+    "remove-node-modules": "^1.7.6",
     "standard": "^17.1.0"
   },
   "eslintConfig": {
