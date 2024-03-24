@@ -1,4 +1,5 @@
-import VintedMoniteur from 'vinted-moniteur'
+// import VintedMoniteur from 'vinted-moniteur'
+import VintedMoniteur from './VintedMoniteur/VintedMoniteur.js'
 import { brandMapper } from './utils.js'
 class VintedService {
   getProducts ({ brand, searchText, io }) {
@@ -7,6 +8,11 @@ class VintedService {
 
     if (searchText) {
       url += `&search_text=${searchText}`
+    }
+
+    if (brand === 'custom') {
+      url = `https://www.vinted.fr/catalog?brand_id[]=%24%7BbrandId%7D&brand_id[]=51445&brand_id[]=4977456&brand_id[]=2514944&brand_id[]=891681&brand_id[]=639289&brand_id[]=235040&brand_id[]=505614&color_ids[]=1&catalog[]=257&catalog[]=260
+      `
     }
     const moniteur = new VintedMoniteur({
       url,
@@ -21,7 +27,6 @@ class VintedService {
     moniteur.on('error', (err) => console.log(err))
     moniteur.on('item', (data) => {
       io.emit('product', data)
-      console.log('emit data', data.id)
       // -> OBJECT
       // {
       //     id: 2838672149,
