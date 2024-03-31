@@ -77,8 +77,6 @@ export const vintedSearch = (url, proxy) => {
         c = cookies.get('be') || await fetchCookie('be')
       const { validURL, domain, querystring } = parseVintedURL(url)
       if (!validURL) return resolve()
-      console.log(['FETCH'], `https://www.vinted.be/api/v2/catalog/items?${querystring}`)
-
       fetch(`https://www.vinted.be/api/v2/catalog/items?${querystring}`, {
         headers: {
           'user-agent': userag,

@@ -36,6 +36,7 @@ app.get('/', (_, res) => {
 const vintedService = new VintedService()
 
 app.get('/product', (req, res) => {
+  console.log('GET /product')
   const { brand, searchText } = req.query
   vintedService.getProducts({ brand, searchText }).then((products) => {
     res.set('Content-Type', 'application/json')

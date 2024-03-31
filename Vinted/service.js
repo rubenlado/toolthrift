@@ -11,7 +11,12 @@ class VintedService {
     }
 
     if (brand === 'custom') {
-      url = `https://www.vinted.fr/catalog?brand_id[]=%24%7BbrandId%7D&brand_id[]=51445&brand_id[]=4977456&brand_id[]=2514944&brand_id[]=891681&brand_id[]=639289&brand_id[]=235040&brand_id[]=505614&color_ids[]=1&catalog[]=257&catalog[]=260
+      url = `https://www.vinted.fr/catalog?brand_id[]=51445&brand_id[]=51445&brand_id[]=4977456&brand_id[]=2514944&brand_id[]=891681&brand_id[]=639289&brand_id[]=235040&brand_id[]=505614&brand_id[]=576107&brand_id[]=59974&brand_id[]=11521&brand_id[]=56974&brand_id[]=47829&brand_id[]=1965&brand_id[]=184436&brand_id[]=671&brand_id[]=1455187&brand_id[]=75090&brand_id[]=214088&brand_id[]=276225&brand_id[]=73952&brand_id[]=145654&brand_id[]=609050&color_id[]=1&catalog[]=257&catalog[]=260
+      `
+    }
+
+    if (brand === 'all') {
+      url = `https://www.vinted.fr/catalog?brand_id[]=51445&brand_id[]=51445&brand_id[]=4977456&brand_id[]=2514944&brand_id[]=891681&brand_id[]=639289&brand_id[]=235040&brand_id[]=505614&brand_id[]=576107&brand_id[]=59974&brand_id[]=11521&brand_id[]=56974&brand_id[]=47829&brand_id[]=1965&brand_id[]=184436&brand_id[]=671&brand_id[]=1455187&brand_id[]=75090&brand_id[]=214088&brand_id[]=276225&brand_id[]=73952&brand_id[]=145654&brand_id[]=609050&brand_id[]=2053426&brand_id[]=9044186&brand_id[]=400&brand_id[]=4785&brand_id[]=567&brand_id[]=5821136&brand_id[]=72138&brand_id[]=344976&brand_id[]=180798
       `
     }
     const moniteur = new VintedMoniteur({

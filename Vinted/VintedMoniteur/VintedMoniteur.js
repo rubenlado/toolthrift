@@ -62,6 +62,11 @@ class VintedMoniteur extends EventEmitter {
           db.set('first', true)
           if (this.debug) console.log(`${itemsToSend.length} ${itemsToSend.length > 1 ? 'nouveaux articles trouvés' : 'nouvel article trouvé'} pour la recherche: ${url}!\n`)
         }
+        const formatPrice = (price) => {
+          console.log(price, 'price')
+          // const priceArr = price.split(' ')
+          // return priceArr[0]
+        }
 
         for (const item of itemsToSend) {
           const obj = {
@@ -75,9 +80,10 @@ class VintedMoniteur extends EventEmitter {
             pp: item.photo?.url,
             thumbnails: item.photo.thumbnails?.map(image => image.url),
             color: item?.photo?.dominant_color,
-            price: `${item.price || 'vide'} ${item.currency || 'EUR'} (${item.total_item_price || 'vide'})`,
-            size: item.size_title || 'vide',
-            marque: item.brand_title || 'vide',
+            price: `${item.price || 'vide'} ${item.currency || 'EUR'} (${item.total_item_price || 'No total price info'})`,
+            totalPrice: `${item.total_item_price || 'No price info'} ${item.currency || 'EUR'}`,
+            size: item.size_title || 'No size',
+            marque: item.brand_title || 'No brand',
             brand: {
               likes: item.favourite_count || 0,
               views: item.view_count || 0
